@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quer namorar comigo?</title>
+  <style>
+    body {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      margin: -100px 0 0 -150px;
+      font-family: "Roboto", sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 300;
+      color: #333;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 100px;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border: 2px solid #333;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: green;
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    button.nao:hover {
+      position: absolute;
+      left: calc(50% + 20px);
+      top: calc(50% - 30px);
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <img src="1.jpg" width="150px">
+    <h4>Amanda Sobral,topa fazer parte da minha vida de<br> forma oficial sendo então minha namorada? <br>Sabendo que não tera falta de beijos e abraços diario</h4>
+    <div class="buttons">
+      <button onclick="respostaSim()">Sim</button>
+      <button class="nao">Não</button>
+    </div>
+  </div>
+
+  <script>
+    function respostaSim() {
+      window.location.href = "sim.html";
+    }
+
+    const buttonNao = document.querySelector('.nao');
+    buttonNao.addEventListener('mouseover', () => {
+      const vertical = Math.floor(Math.random() * 400);
+      const horizontal = Math.floor(Math.random() * 400);
+      buttonNao.style.position = 'absolute';
+      buttonNao.style.left = vertical + 'px';
+      buttonNao.style.top = horizontal + 'px';
+    });
+  </script>
+</body>
+</html>
